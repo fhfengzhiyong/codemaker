@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.yg.dao.AppBaichuanOrderMapper">
+  <resultMap id="BaseResultMap" type="cn.com.yg.model.AppBaichuanOrder">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="order_id" jdbcType="VARCHAR" property="orderId" />
+    <result column="order_status" jdbcType="VARCHAR" property="orderStatus" />
+    <result column="order_ceate_date" jdbcType="VARCHAR" property="orderCeateDate" />
+    <result column="create_date" jdbcType="VARCHAR" property="createDate" />
+    <result column="is_handle" jdbcType="CHAR" property="isHandle" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, order_id, order_status, order_ceate_date, create_date, is_handle
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yg_app_baichuan_order
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from yg_app_baichuan_order
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.com.yg.model.AppBaichuanOrder">
+    insert into yg_app_baichuan_order (id, order_id, order_status, 
+      order_ceate_date, create_date, is_handle
+      )
+    values (#{id,jdbcType=VARCHAR}, #{orderId,jdbcType=VARCHAR}, #{orderStatus,jdbcType=VARCHAR}, 
+      #{orderCeateDate,jdbcType=VARCHAR}, #{createDate,jdbcType=VARCHAR}, #{isHandle,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.com.yg.model.AppBaichuanOrder">
+    insert into yg_app_baichuan_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="orderStatus != null">
+        order_status,
+      </if>
+      <if test="orderCeateDate != null">
+        order_ceate_date,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="isHandle != null">
+        is_handle,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderStatus != null">
+        #{orderStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="orderCeateDate != null">
+        #{orderCeateDate,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=VARCHAR},
+      </if>
+      <if test="isHandle != null">
+        #{isHandle,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.com.yg.model.AppBaichuanOrder">
+    update yg_app_baichuan_order
+    <set>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="orderStatus != null">
+        order_status = #{orderStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="orderCeateDate != null">
+        order_ceate_date = #{orderCeateDate,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=VARCHAR},
+      </if>
+      <if test="isHandle != null">
+        is_handle = #{isHandle,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.com.yg.model.AppBaichuanOrder">
+    update yg_app_baichuan_order
+    set order_id = #{orderId,jdbcType=VARCHAR},
+      order_status = #{orderStatus,jdbcType=VARCHAR},
+      order_ceate_date = #{orderCeateDate,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=VARCHAR},
+      is_handle = #{isHandle,jdbcType=CHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
