@@ -1,29 +1,18 @@
 package com.bluepoint.code.freemarker;
 
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.text.DateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import com.bluepoint.code.util.BaseConfig;
+import com.bluepoint.code.util.EntityBean;
+import com.bluepoint.code.util.EntityProperties;
+import com.bluepoint.code.util.NameConverter;
 import org.apache.commons.lang.time.DateFormatUtils;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
-import com.bluepoint.code.util.BaseConfig;
-import com.bluepoint.code.util.EntityBean;
-import com.bluepoint.code.util.EntityProperties;
-import com.bluepoint.code.util.NameConverter;
-
-import oracle.sql.DATE;
+import java.sql.*;
+import java.text.DateFormat;
+import java.util.*;
+import java.util.Date;
 
 public class FreeMarkerFrontAction extends FreemarkerService {
 

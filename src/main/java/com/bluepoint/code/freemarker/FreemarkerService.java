@@ -19,10 +19,10 @@ import freemarker.template.Template;
 
 public abstract class FreemarkerService
 { 
-	public static String url = "jdbc:mysql://123.57.80.58:3306/robot";
-    public static String user = "robot";
-    public static String password = "robot";
-    
+	public static String url = "jdbc:mysql://119.29.94.19:3306/robot";
+    public static String user = "root";
+    public static String password = "!U7t6f5n3";
+
 
   /*  public static String url = "jdbc:mysql://115.28.2.193:3306/choir";
     public static String user = "root";

@@ -12,9 +12,9 @@ public class MainBuild {
         ApplicationContext context = new ClassPathXmlApplicationContext(configLocation);
         BaseConfig baseConfig = context.getBean(BaseConfig.class);
         FreeMarkerConfigurer freeMarkerConfigurer = context.getBean(FreeMarkerConfigurer.class);
-        baseConfig.setEntityPath("F:/code-src/robot/");
-        baseConfig.setMapperXmlPath("F:/code-src/robot/"); 
-        String EntityPath = "F:/code-src/robot/";
+        baseConfig.setEntityPath("F:/code-src/admin/");
+        baseConfig.setMapperXmlPath("F:/code-src/admin/");
+        String EntityPath = "F:/code-src/admin/";
         //文档生成
     	baseConfig.setEntityPath(EntityPath + "doc/");
         baseConfig.setSuffix(".md");
